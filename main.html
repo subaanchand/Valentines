@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff; /* White background color */
+            color: #000; /* Black text color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .h-screen {
+            height: 100vh;
+        }
+
+        .-mt-16 {
+            margin-top: -16px;
+        }
+
+        .text-4xl {
+            font-size: 2rem;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .my-4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .h-[200px] {
+            height: 200px;
+        }
+
+        .bg-green-500 {
+            background-color: #34d399;
+        }
+
+        .hover\:bg-green-700:hover {
+            background-color: #22c35e;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .rounded {
+            border-radius: 0.375rem;
+        }
+
+        .bg-red-500 {
+            background-color: #ef4444;
+        }
+
+        .hover\:bg-red-700:hover {
+            background-color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex flex-col items-center justify-center h-screen -mt-16">
+    <img class="h-[200px]" src="https://gifdb.com/images/high/tanjiro-question-marks-qg3rfojgqjttaqf8.gif" alt="image1" />
+    <h1 class="text-4xl my-4">Will you be my Valentine :)</h1>
+    <div>
+        <button
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            style="font-size: 16px;"
+            onclick="setYesPressed(true)"
+        >
+            YES
+        </button>
+        <button
+            onclick="handleNoClick()"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            id="noButton"
+        >
+            NO
+        </button>
+    </div>
+
+    <div id="yesContent" style="display: none;">
+        <img src="https://gifdb.com/images/high/cute-baby-cheering-enkl65ixwvswlna1.gif" alt="image2" />
+        <div class="text-4xl font-bold my-4">YEAH THATS RIGHT!</div>
+    </div>
+
+    <script>
+        var noCount = 0;
+        var yesPressed = false;
+
+        function setYesPressed(value) {
+            yesPressed = value;
+
+            if (yesPressed) {
+                document.getElementById("yesContent").style.display = "block";
+            }
+        }
+
+        function handleNoClick() {
+            noCount++;
+
+            var noButton = document.getElementById("noButton");
+            noButton.innerText = (noCount === 1) ? "No" : getNoButtonText();
+            
+            if (yesPressed) {
+                document.getElementById("yesContent").style.display = "none";
+            }
+        }
+
+        function getNoButtonText() {
+            var phrases = [
+                "Are you sure?",
+                "Really sure?",
+                "Are you trying to die!",
+                "You are playing a dangerous game!",
+                "Surely not Panna?",
+                "You will regret this Panu!",
+                "Give it another thought!",
+                "Carry on clicking - Im gonna merk you",
+                "I WAS THERE FOR YOU SINCE DAY 1",
+                "Have a heart WITCH!",
+                "Is that your final answer?",
+                "Expect my resignation from this relatonship at your desk tomorrow...",
+            ];
+
+            return phrases[Math.min(noCount, phrases.length - 1)];
+        }
+    </script>
+</div>
+
+</body>
+</html>
