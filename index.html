@@ -9,89 +9,38 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #fff; /* White background color */
-            color: #000; /* Black text color */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            margin: 0;
+            padding: 0;
+            background-image: url('URL_TO_YOUR_BACKGROUND_IMAGE'); /* Replace 'URL_TO_YOUR_BACKGROUND_IMAGE' with the actual URL of your background image */
+            background-size: cover;
+            background-position: center;
+            color: #000;
         }
 
-        .flex {
-            display: flex;
+        .border-image {
+            position: absolute;
+            width: 50px; /* Adjust the size of the border images */
+            height: 50px;
+            border: 2px solid #fff; /* Border color */
+            border-radius: 50%; /* Make it circular */
+            overflow: hidden;
         }
 
-        .flex-col {
-            flex-direction: column;
-        }
+        .top-left { top: 0; left: 0; }
+        .top-right { top: 0; right: 0; }
+        .bottom-left { bottom: 0; left: 0; }
+        .bottom-right { bottom: 0; right: 0; }
 
-        .items-center {
-            align-items: center;
-        }
-
-        .justify-center {
-            justify-content: center;
-        }
-
-        .h-screen {
-            height: 100vh;
-        }
-
-        .-mt-16 {
-            margin-top: -16px;
-        }
-
-        .text-4xl {
-            font-size: 2rem;
-        }
-
-        .font-bold {
-            font-weight: bold;
-        }
-
-        .my-4 {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .h-[200px] {
-            height: 200px;
-        }
-
-        .bg-green-500 {
-            background-color: #34d399;
-        }
-
-        .hover\:bg-green-700:hover {
-            background-color: #22c35e;
-        }
-
-        .text-white {
-            color: #fff;
-        }
-
-        .py-2 {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        .rounded {
-            border-radius: 0.375rem;
-        }
-
-        .bg-red-500 {
-            background-color: #ef4444;
-        }
-
-        .hover\:bg-red-700:hover {
-            background-color: #dc2626;
-        }
+        /* ... (existing styles remain the same) ... */
     </style>
 </head>
 <body>
+
+    <img class="border-image top-left" src="image1.jpg" alt="Border Image 1">
+    <img class="border-image top-right" src="image2.jpg" alt="Border Image 2">
+    <img class="border-image bottom-left" src="image3.jpg" alt="Border Image 3">
+    <img class="border-image bottom-right" src="image4.jpg" alt="Border Image 4">
+    
 
 <div class="flex flex-col items-center justify-center h-screen -mt-16">
     <img class="h-[200px]" src="https://gifdb.com/images/high/tanjiro-question-marks-qg3rfojgqjttaqf8.gif" alt="image1" />
@@ -115,7 +64,7 @@
 
     <div id="yesContent" style="display: none;">
         <img src="https://gifdb.com/images/high/cute-baby-cheering-enkl65ixwvswlna1.gif" alt="image2" />
-        <div class="text-4xl font-bold my-4">YEAH THATS RIGHT!</div>
+        <div class="text-4xl font-bold my-4">YEAH THAT'S RIGHT!</div>
     </div>
 
     <script>
